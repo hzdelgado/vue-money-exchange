@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { toRef } from 'vue'
-import CurrencyInput from './CurrencyInput.vue';
+import CurrencyInput from './CurrencyInput.vue'
 
 const props = defineProps({
   label: String,

@@ -7,7 +7,7 @@ const emit = defineEmits(['selectedIndex'])
 
 const props = defineProps({
   buyPrice: String,
-  sellPrice: String,
+  sellPrice: String
 })
 
 const updateHighlightedTab = (index: number) => {
@@ -34,6 +34,7 @@ defineExpose({
   >
     <div class="place-self-end">
       <PurpleButton
+        data-test="buy-button"
         @click="() => onClick(0)"
         :selectedBtn="selectedFirst"
         label="Dólar compra"
@@ -42,6 +43,7 @@ defineExpose({
     </div>
     <div class="place-self-end">
       <PurpleButton
+        data-test="sell-button"
         @click="() => onClick(1)"
         :selectedBtn="selectedSecond"
         label="Dólar venta"
