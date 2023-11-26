@@ -38,7 +38,7 @@ defineExpose({
         @click="() => onClick(0)"
         :selectedBtn="selectedFirst"
         label="Dólar compra"
-        :changeValue="buyPrice"
+        :changeValue="buyPrice?.toString()"
       />
     </div>
     <div class="place-self-end">
@@ -47,7 +47,7 @@ defineExpose({
         @click="() => onClick(1)"
         :selectedBtn="selectedSecond"
         label="Dólar venta"
-        :changeValue="sellPrice"
+        :changeValue="sellPrice?.toString()"
       />
     </div>
   </div>

@@ -8,20 +8,31 @@ import { useRateStore } from '../../stores/rate'
 import CurrencyNameEnum from '@/enums/CurrencyNameEnum'
 import ExchangeModeEnum from '@/enums/ExchangeModeEnum'
 import CurrencyCodeEnum from '@/enums/CurrencyCodeEnum'
+import { storeToRefs } from 'pinia'
+
 const firstInputLbl = ref(CurrencyNameEnum.DOLLAR.toString())
 const secondInputLbl = ref(CurrencyNameEnum.SOL.toString())
 
 const exchangeTabRef = ref()
-const exchangeMode = ref(ExchangeModeEnum.PURCHASE.toString())
 const store = useRateStore()
+const { salePrice, purchasePrice } = storeToRefs(store)
+const exchangeMode = ref(ExchangeModeEnum.PURCHASE.toString())
 const firstInputValue = ref('1000')
 let secondInpuValue = ref('0.0')
 const firstInputCurrency = ref({ currency: CurrencyCodeEnum.DOLLAR.toString() })
 const secondInpuCurrency = ref({ currency: CurrencyCodeEnum.SOL.toString() })
 
-watch(store, (newStore) => {
-  secondInpuValue = ref((newStore.rate?.purchase_price * 1000).toFixed(2))
+watch(store, () => {
+  secondInpuValue.value = (purchasePrice.value * 1000).toFixed(2);
 })
+
+function purchaseDollar(value: string) {
+  return (parseFloat(value) * purchasePrice.value).toFixed(2)
+}
+
+function sellDollar(value: string) {
+  return (parseFloat(value) / salePrice.value).toFixed(2)
+}
 
 const updateData = () => {
   firstInputLbl.value =
@@ -45,21 +56,17 @@ const updateData = () => {
 }
 
 const updateFirstChangeValue = (value: string) => {
-  const purchase = parseFloat(value) * store.rate?.purchase_price
-  const sale = parseFloat(value) / store.rate?.sale_price
+  const purchase = purchaseDollar(value)
+  const sale = sellDollar(value)
   secondInpuValue.value =
-    exchangeMode.value == ExchangeModeEnum.PURCHASE.toString()
-      ? purchase.toFixed(2)
-      : sale.toFixed(2)
+    exchangeMode.value == ExchangeModeEnum.PURCHASE.toString() ? purchase : sale
 }
 
 const updateSecondChangeValue = (value: string) => {
-  const purchase = parseFloat(value) * store.rate?.purchase_price
-  const sale = parseFloat(value) / store.rate?.sale_price
+  const purchase = purchaseDollar(value)
+  const sale = sellDollar(value)
   firstInputValue.value =
-    exchangeMode.value == ExchangeModeEnum.PURCHASE.toString()
-      ? sale.toFixed(2)
-      : purchase.toFixed(2)
+    exchangeMode.value == ExchangeModeEnum.PURCHASE.toString() ? sale : purchase
 }
 
 const handleSwitch = () => {
@@ -84,8 +91,8 @@ const handleTabSelection = (index: number) => {
       <ExchangeTabBar
         ref="exchangeTabRef"
         @selectedIndex="handleTabSelection"
-        :buyPrice="store.rate?.purchase_price || '0'"
-        :sellPrice="store.rate?.sale_price || '0'"
+        :buyPrice="purchasePrice"
+        :sellPrice="salePrice"
       />
       <div class="relative w-full">
         <div class="flex flex-col items-center pt-10 gap-6">
