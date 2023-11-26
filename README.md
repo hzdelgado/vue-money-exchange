@@ -1,6 +1,6 @@
 # Web App  - Casa de Cambio Online
 
-Aplicación de cambio de divisas desarrollada con Vue 3, y TailwindCSS como framework CSS.
+Aplicación de cambio de divisas desarrollada con Vue 3, TailwindCSS como framework CSS y Pinia para el manejo de estados.
 
 <img width="1788" alt="Screenshot 2023-11-26 at 16 30 16" src="https://github.com/hzdelgado/vue-money-exchange/assets/88523514/b74b727b-4af2-4b88-88b7-bcaa1043e358">
 
