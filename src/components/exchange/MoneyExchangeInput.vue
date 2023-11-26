@@ -5,7 +5,7 @@ import CurrencyInput from './CurrencyInput.vue'
 const props = defineProps({
   label: String,
   subtitle: String,
-  modelValue: Number,
+  modelValue: String,
   options: Object
 })
 const modelValue = toRef(props, 'modelValue')

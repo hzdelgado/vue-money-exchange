@@ -1,6 +1,4 @@
-import firebase from 'firebase/compat/app'
-
-function getFirebaseConfig() {
+const getFirebaseConfig = () => {
   const firebaseConfig = {
     apiKey: import.meta.env.VITE_FIREBASE_API_KEY || 'api-key-not-set',
     authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || 'env-not-set',
@@ -13,6 +11,4 @@ function getFirebaseConfig() {
   return firebaseConfig
 }
 
-const firebaseApp = firebase.initializeApp(getFirebaseConfig())
-
-export default firebaseApp
+export default getFirebaseConfig;

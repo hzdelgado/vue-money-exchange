@@ -91,8 +91,8 @@ const handleTabSelection = (index: number) => {
       <ExchangeTabBar
         ref="exchangeTabRef"
         @selectedIndex="handleTabSelection"
-        :buyPrice="purchasePrice"
-        :sellPrice="salePrice"
+        :buyPrice="purchasePrice.toString()"
+        :sellPrice="salePrice.toString()"
       />
       <div class="relative w-full">
         <div class="flex flex-col items-center pt-10 gap-6">
