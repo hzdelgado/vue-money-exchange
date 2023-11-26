@@ -3,5 +3,6 @@ import HomePage from './views/HomePage.vue';
 </script>
 
 <template>
-  <HomePage/>
+  <div class="bg-gradient-to-b from-purple-intense to-purple-light">
+  <HomePage/></div>
 </template>
