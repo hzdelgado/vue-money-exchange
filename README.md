@@ -1,51 +1,44 @@
-# vue-money-exchange
+# Web App  - Casa de Cambio Online
 
-This template should help get you started developing with Vue 3 in Vite.
+Aplicación de cambio de divisas desarrollada con Vue 3, y TailwindCSS como framework CSS.
 
-## Recommended IDE Setup
+<img width="1788" alt="Screenshot 2023-11-26 at 16 30 16" src="https://github.com/hzdelgado/vue-money-exchange/assets/88523514/b74b727b-4af2-4b88-88b7-bcaa1043e358">
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Type Support for `.vue` Imports in TS
+## IDE + Configuración Recomendada
+- [VSCode](https://code.visualstudio.com/) + [Vue Volar Extension Pack](https://marketplace.visualstudio.com/items?itemName=MisterJ.vue-volar-extention-pack).
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Demo
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+Demo desplegada en Netlify [aquí](https://6563b5df09319d36ed40ac34--chic-twilight-f42734.netlify.app/).
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+## Configuración
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+### Instalar Paquetes
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Compilación y Hot-Reload para Desarrollo
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### Verificar tipos, compilar y minimizar para Producción
 
 ```sh
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+### Ejecutar Test Unitarios con [Vitest](https://vitest.dev/)
 
 ```sh
 npm run test:unit
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### Lint con [ESLint](https://eslint.org/)
 
 ```sh
 npm run lint
